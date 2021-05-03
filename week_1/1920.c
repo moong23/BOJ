@@ -1,4 +1,7 @@
-// week 1 binary search
+/*
+week 1 binary search
+http://acmicpc.net/problem/1920
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
