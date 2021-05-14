@@ -8,8 +8,8 @@ http://acmicpc.net/problem/10989
 
 int main(){
     int n, max, min, num;
-    char *arr;
-    arr = (char*)calloc(10001, sizeof(char)); //들어오는 수의 범위 : 1 ~ 10000 but 편의를 위해 10001만큼 할당
+    int *arr;
+    arr = (int*)calloc(10001, sizeof(int)); //들어오는 수의 범위 : 1 ~ 10000 but 편의를 위해 10001만큼 할당
     max = 1, min = 10000;
     scanf("%d", &n);
     for(int i=0;i<n;i++){
@@ -18,7 +18,7 @@ int main(){
         max < num ? max = num : max;
         min > num ? min = num : min;
     }
-    for(int i=min;i<=max;i++){
+    for(int i=min; i<=max; i++){
         if (arr[i]>0){
             for(int j=0;j<arr[i];j++){
                 printf("%d\n", i);
