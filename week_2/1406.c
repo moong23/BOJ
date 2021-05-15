@@ -37,6 +37,8 @@ int main(){
     char cursor, target;
     int num, length;
     scanf("%s", leftstack);
+    
+    printf("%c\n", leftstack[2]);
     l_top = strlen(leftstack)-1;
 //    printf("l_top: %d\n", l_top);
 
