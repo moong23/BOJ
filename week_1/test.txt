@@ -1,4 +1,4 @@
-5
-6 3 2 10 -10
-8
-10 9 -5 2 3 4 5 -10
+Elementary Linear Algebra (Anton and Rores)
+Elementary Linear Algebra (Larson and Falro)
+Introduction to Linear Algebra (Gilbert Strang)
+선형대수학 책 있으신분 연락주세요ㅠㅜ
