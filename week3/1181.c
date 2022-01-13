@@ -37,22 +37,19 @@ int main()
             {
                 if (cnt_same != 0)
                 { // if there's multiple same length string
-                    for (int k = 1; k < cnt_same; k++)
+                    for (int k = 0; k < cnt_same; k++)
                     {
-                        if (strcmp(brr[cnt - k], arr[i]) > 0) // strcmp returns negative integer if string is in ascending order.
+                        if (strcmp(brr[cnt - k], arr[i]) < 0)
                         {
-                            char tmp[50];
-                            strcpy(tmp, brr[cnt - k]);
-                            strcpy(brr[cnt - k], arr[i]);
-                            strcpy(arr[i], tmp);
                         }
                     }
                 }
                 else
                 {
                     strcpy(brr[cnt++], arr[i]);
+                    cnt_same++;
                 }
-                cnt_same++;
+
             } // if there's same length string, sort by alphabetical ascending order.
         }
     }
