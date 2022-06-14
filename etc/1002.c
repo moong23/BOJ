@@ -2,15 +2,13 @@
 https://www.acmicpc.net/problem/1002
 */
 
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
-int main()
-{
+int main() {
     int num;
     scanf("%d", &num);
-    while (num--)
-    {
+    while (num--) {
         int xa, xb, ya, yb, ra, rb;
         float d;
         scanf("%d %d %d %d %d %d", &xa, &ya, &xb, &yb, &ra, &rb);
