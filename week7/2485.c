@@ -12,19 +12,16 @@ int brr[100000];
 int ans(int *, int);
 int lcd(int, int);
 
-int main()
-{
+int main() {
     int num, res;
     scanf("%d", &num);
-    for (int i = 0; i < num; i++)
-    {
+    for (int i = 0; i < num; i++) {
         scanf("%d", &arr[i]);
     }
 
-    for (int i = 1; i < num; i++)
-    {
+    for (int i = 1; i < num; i++) {
         brr[i - 1] = abs(arr[i] - arr[i - 1]);
-    } // initialize brr
+    }  // initialize brr
 
     // for (int i = 0; i < num - 1; i++)
     // {
@@ -38,14 +35,12 @@ int main()
     return 0;
 }
 
-int ans(int brr[], int n)
-{
+int ans(int brr[], int n) {
     int tmp, res = 0;
     tmp = brr[0] > brr[1] ? lcd(brr[0], brr[1]) : lcd(brr[1], brr[0]);
 
     // printf("first tmp: %d\n", tmp);
-    for (int i = 2; i < n; i++)
-    {
+    for (int i = 2; i < n; i++) {
         if (tmp > brr[i])
             tmp = lcd(tmp, brr[i]);
         else
@@ -53,20 +48,17 @@ int ans(int brr[], int n)
         // printf("tmp: %d\n", tmp);
     }
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         // res += tmp / brr[i];
         res += brr[i] / tmp - 1;
     }
     return res;
 }
 
-int lcd(int a, int b)
-{
+int lcd(int a, int b) {
     int tmp = -1, tmp_a, tmp_b;
     // printf("%d / %d\n", a, b);
-    if (a % b == 0)
-    {
+    if (a % b == 0) {
         if (a > b)
             return b;
         else
@@ -74,8 +66,7 @@ int lcd(int a, int b)
     }
     tmp_a = a;
     tmp_b = b;
-    while (tmp != 0)
-    {
+    while (tmp != 0) {
         tmp = tmp_a % tmp_b;
         tmp_a = tmp_b;
         tmp_b = tmp;
