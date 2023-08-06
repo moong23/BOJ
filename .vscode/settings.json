@@ -1,6 +1,10 @@
 {
-    "files.associations": {
-        "*.js": "javascriptreact",
-        "stdio.h": "c"
-    }
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "stdio.h": "c"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
 }
