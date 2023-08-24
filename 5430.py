@@ -1,47 +1,32 @@
-from collections import deque
 import sys
+from collections import deque
 
 input = sys.stdin.readline
-
-T = int(input().strip())
+T = int(input())
 
 for _ in range(T):
-    flag = 0
-    check = 0
-    index = 0
-    p = input().strip()
-    n = int(input().strip())
-    a = input().strip().replace('[', '').replace(']', '').split(',')
-    num = deque()
-    for i in a:
-        if '0' <= i <= '99':
-            num.append(i)
-    for i in p:
-        if i == 'D':
-            if len(num) == 0:
-                flag = 1
-                break
-            else:
-                if check:
-                    num.pop()
+    command = input().strip()
+    N = int(input())
+    numbers = deque(
+        map(int, input().strip()[1:-1].split(','))) if N > 0 else deque(input().strip()[1:-1])
+    # print(numbers)
+    direction = 1  # 1 -> / 0 <-
+    error_flag = False
+    for cmd in command:
+        if cmd == 'R':
+            direction = 1 - direction
+        elif cmd == 'D':
+            if N > 0:
+                N -= 1
+                if direction == 1:
+                    numbers.popleft()
                 else:
-                    num.popleft()
-        elif i == 'R':
-            if check:
-                check = 0
+                    numbers.pop()
             else:
-                check = 1
-    if flag == 1:
-        print("error")
-        continue
-    else:
-        if check:
-            num.reverse()
-    print('[', end='')
-    for i in num:
-        if index == len(num) - 1:
-            print(i, end='')
-        else:
-            print(i, end=',')
-            index += 1
-    print(']')
+                print('error')
+                error_flag = True
+                break
+    if not error_flag:
+        if direction == 0:
+            numbers.reverse()
+        print('['+','.join(map(str, numbers))+']')
